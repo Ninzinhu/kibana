@@ -439,8 +439,13 @@ describe('executeDashboardOperations', () => {
   describe('validateDashboard', () => {
     const validateDashboard: ValidateDashboard = ({ panels }) =>
       panels.flatMap((widget, widgetIndex) =>
-        !isSection(widget) && widget.config.invalid
-          ? [{ path: ['panels', widgetIndex, 'config', 'invalid'], message: 'Unrecognized key' }]
+        !isSection(widget) && 'unrecognizedKey' in widget.config
+          ? [
+              {
+                path: ['panels', widgetIndex, 'config', 'unrecognizedKey'],
+                message: 'Unrecognized key',
+              },
+            ]
           : []
       );
 
@@ -473,7 +478,7 @@ describe('executeDashboardOperations', () => {
             'Created a metric showing total requests.'
           ),
           'show p95 latency': createResolvedPanelContent(
-            { type: LENS_EMBEDDABLE_TYPE, config: { type: 'metric', invalid: true } },
+            { type: LENS_EMBEDDABLE_TYPE, config: { type: 'metric', unrecognizedKey: true } },
             'Created a metric showing p95 latency.'
           ),
         }),

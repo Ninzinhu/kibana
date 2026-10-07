@@ -28,6 +28,7 @@ jest.mock('./resolvers/control_field_capabilities_resolver', () => ({
   createControlFieldCapabilitiesResolver: jest.fn(),
 }));
 jest.mock('./resolvers/panel_resolver', () => ({ createPanelResolver: jest.fn() }));
+jest.mock('./dashboard_validator', () => ({ createDashboardValidator: jest.fn() }));
 jest.mock('./resolvers/attachment_panel_resolver', () => ({
   createAttachmentPanelResolver: jest.fn(),
 }));
@@ -56,7 +57,7 @@ const generatedDashboard: DashboardAttachmentData = { title: 'Agent dashboard', 
 
 const callHandler = async (dashboardAttachmentId?: string) => {
   const tool = generateDashboardTool({
-    getDashboardStateSchema: jest.fn().mockResolvedValue({}),
+    getDashboardStateSchema: jest.fn(),
   });
   const sendUiEvent = jest.fn();
   const ctx = {
