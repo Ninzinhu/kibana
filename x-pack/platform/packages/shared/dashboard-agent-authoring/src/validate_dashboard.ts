@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { isEqual } from 'lodash';
+import { get, isEqual } from 'lodash';
 import type {
   AttachmentPanel,
   DashboardAttachmentData,
@@ -38,6 +38,13 @@ interface ValidationResult {
 }
 
 type PinnedPanel = NonNullable<DashboardAttachmentData['pinned_panels']>[number];
+
+type RevertedPanelFields = Partial<Pick<AttachmentPanel, 'type' | 'config' | 'grid'>>;
+
+interface InvalidPanel {
+  messages: string[];
+  revertedFields: RevertedPanelFields;
+}
 
 interface PanelsResult {
   panels: DashboardAttachmentData['panels'];
@@ -131,11 +138,36 @@ const getOriginalPanels = (
   return originalPanels;
 };
 
-/** Compares by value, so changes are detected even when operations copy unchanged content. */
-const hasChangedContent = (panel: AttachmentPanel, originalPanel?: AttachmentPanel): boolean =>
-  !originalPanel ||
-  originalPanel.type !== panel.type ||
-  !isEqual(originalPanel.config, panel.config);
+/**
+ * Whether the operations changed the value an issue points at. Compares by value, so changes are
+ * detected even when operations copy unchanged content.
+ */
+const hasChangedValueAt = (
+  panel: AttachmentPanel,
+  originalPanel: AttachmentPanel | undefined,
+  relativePath: ReadonlyArray<PropertyKey>
+): boolean => {
+  if (!originalPanel || originalPanel.type !== panel.type) {
+    return true;
+  }
+  return relativePath.length === 0
+    ? !isEqual(originalPanel, panel)
+    : !isEqual(get(originalPanel, relativePath), get(panel, relativePath));
+};
+
+/**
+ * The original values to restore for an issue: type and config are restored together, since the
+ * config schema depends on the type, and an issue in the panel as a whole restores every field.
+ */
+const getRevertedFields = (
+  { type, config, grid }: AttachmentPanel,
+  [field]: ReadonlyArray<PropertyKey>
+): RevertedPanelFields => {
+  if (field === 'grid') {
+    return { grid };
+  }
+  return field === undefined ? { type, config, grid } : { type, config };
+};
 
 const toFailure = (identifier: string, messages: string[], outcome: string): OperationFailure => ({
   type: DASHBOARD_OPERATION_FAILURE_TYPES.validateDashboard,
@@ -149,12 +181,12 @@ const discardInvalidPanels = ({
   originalDashboardData,
   dashboardData,
   originalPanels,
-  messagesByPanel,
+  invalidPanels,
 }: {
   originalDashboardData: DashboardAttachmentData;
   dashboardData: DashboardAttachmentData;
   originalPanels: Map<AttachmentPanel, AttachmentPanel>;
-  messagesByPanel: Map<AttachmentPanel, string[]>;
+  invalidPanels: Map<AttachmentPanel, InvalidPanel>;
 }): PanelsResult => {
   const originalSectionIds = new Set(
     originalDashboardData.panels.filter(isSection).map(({ id }) => id)
@@ -163,10 +195,11 @@ const discardInvalidPanels = ({
   const discardedPanelIds = new Set<string>();
 
   const restorePanel = (panel: AttachmentPanel): AttachmentPanel[] => {
-    const messages = messagesByPanel.get(panel);
-    if (!messages) {
+    const invalidPanel = invalidPanels.get(panel);
+    if (!invalidPanel) {
       return [panel];
     }
+    const { messages, revertedFields } = invalidPanel;
 
     discardedPanelIds.add(panel.id);
     const originalPanel = originalPanels.get(panel);
@@ -178,7 +211,7 @@ const discardInvalidPanels = ({
     failures.push(
       toFailure(panel.id, messages, 'Panel was reverted to its state before this call')
     );
-    return [{ ...panel, type: originalPanel.type, config: originalPanel.config }];
+    return [{ ...panel, ...revertedFields }];
   };
 
   const panels = dashboardData.panels.flatMap((widget): DashboardAttachmentData['panels'] => {
@@ -263,7 +296,7 @@ export const discardInvalidChanges = ({
   }
 
   const originalPanels = getOriginalPanels(originalDashboardData, dashboardData);
-  const messagesByPanel = new Map<AttachmentPanel, string[]>();
+  const invalidPanels = new Map<AttachmentPanel, InvalidPanel>();
   const messagesByField = new Map<DashboardField, string[]>();
   const messagesByPinnedPanel = new Map<PinnedPanel, string[]>();
   const dashboardIssues: DashboardValidationIssue[] = [];
@@ -271,8 +304,20 @@ export const discardInvalidChanges = ({
   for (const issue of issues) {
     const issuePanel = getIssuePanel(dashboardData, issue.path);
     if (issuePanel) {
-      if (hasChangedContent(issuePanel.panel, originalPanels.get(issuePanel.panel))) {
-        appendTo(messagesByPanel, issuePanel.panel, formatIssue(issue, issuePanel.pathLength));
+      const { panel, pathLength } = issuePanel;
+      const originalPanel = originalPanels.get(panel);
+      const relativePath = issue.path.slice(pathLength);
+      if (hasChangedValueAt(panel, originalPanel, relativePath)) {
+        const { messages, revertedFields } = invalidPanels.get(panel) ?? {
+          messages: [],
+          revertedFields: {},
+        };
+        invalidPanels.set(panel, {
+          messages: [...messages, formatIssue(issue, pathLength)],
+          revertedFields: originalPanel
+            ? { ...revertedFields, ...getRevertedFields(originalPanel, relativePath) }
+            : revertedFields,
+        });
       }
       continue;
     }
@@ -330,7 +375,7 @@ export const discardInvalidChanges = ({
     originalDashboardData,
     dashboardData,
     originalPanels,
-    messagesByPanel,
+    invalidPanels,
   });
   const fieldResult = discardInvalidFields({
     originalDashboardData,
