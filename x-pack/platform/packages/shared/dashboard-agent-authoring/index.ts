@@ -16,6 +16,8 @@ export type {
   PanelContentAttempt,
 } from './src/resolve_panel';
 
+export type { DashboardValidationIssue, ValidateDashboard } from './src/validate_dashboard';
+
 export { getRendererEmbeddableType } from './src/operations/panels';
 export type {
   CustomContentPanelAddRequest,

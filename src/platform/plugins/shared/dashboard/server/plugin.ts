@@ -200,6 +200,7 @@ export class DashboardPlugin
     });
 
     return {
+      getDashboardStateSchema: getCachedDashboardStateSchema,
       scanDashboards: (
         savedObjectsClient: SavedObjectsClientContract,
         page: number,

@@ -11,6 +11,7 @@ import { ToolType } from '@kbn/agent-builder-common';
 import { ToolResultType } from '@kbn/agent-builder-common/tools/tool_result';
 import { getToolResultId } from '@kbn/agent-builder-server';
 import type { BuiltinSkillBoundedTool } from '@kbn/agent-builder-server/skills';
+import type { DashboardStateSchema } from '@kbn/dashboard-plugin/server';
 import {
   DASHBOARD_ATTACHMENT_TYPE,
   isSection,
@@ -32,6 +33,7 @@ import { retrieveLatestVersion } from './attachment_state';
 import { createAttachmentPanelResolver } from './resolvers/attachment_panel_resolver';
 import { createControlFieldCapabilitiesResolver } from './resolvers/control_field_capabilities_resolver';
 import { createPanelResolver } from './resolvers/panel_resolver';
+import { createDashboardValidator } from './dashboard_validator';
 import { applyDefaultDashboardTimeRange } from './time_range';
 
 const newDashboardMetadataErrorMessage =
@@ -93,6 +95,10 @@ const summarizeDashboard = (
   }),
 });
 
+export interface GenerateDashboardToolDeps {
+  getDashboardStateSchema: () => Promise<DashboardStateSchema>;
+}
+
 /**
  * Kibana dashboard generation tool.
  *
@@ -105,9 +111,9 @@ const summarizeDashboard = (
  * This keeps the heavy payload out of the LLM transcript — the model references
  * the attachment id to render it rather than copying it into the next tool call.
  */
-export const generateDashboardTool = (): BuiltinSkillBoundedTool<
-  typeof generateDashboardSchema
-> => {
+export const generateDashboardTool = ({
+  getDashboardStateSchema,
+}: GenerateDashboardToolDeps): BuiltinSkillBoundedTool<typeof generateDashboardSchema> => {
   return {
     id: dashboardTools.generateDashboard,
     type: ToolType.builtin,
@@ -153,6 +159,7 @@ Use operations[] to:
           resolveControlFieldCapabilities: createControlFieldCapabilitiesResolver({
             esClient: esClient.asCurrentUser,
           }),
+          validateDashboard: createDashboardValidator(await getDashboardStateSchema()),
         });
 
         // Data-aware default time range computation
