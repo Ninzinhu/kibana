@@ -62,7 +62,7 @@ export const executeDashboardOperations = async ({
       panels: [],
     }
   );
-  let nextDashboardData = originalDashboardData;
+  let nextDashboardData = structuredClone(originalDashboardData);
   const failures: OperationFailure[] = [];
   const panelAuthoringNotes: PanelAuthoringNote[] = [];
 
