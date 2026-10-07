@@ -26,6 +26,7 @@ import { LENS_EMBEDDABLE_TYPE } from '@kbn/lens-common';
 import { VEGA_VIS_TYPE } from '@kbn/agent-builder-visualizations-common';
 import { DASHBOARD_OPERATION_FAILURE_TYPES } from './failure_types';
 import type { ControlFieldCapability, ResolveControlFieldCapabilities } from './operations/types';
+import type { ValidateDashboard } from './validate_dashboard';
 
 const usable = (type: string): ControlFieldCapability => ({ status: 'usable', type });
 const NOT_AGGREGATABLE: ControlFieldCapability = { status: 'not_aggregatable' };
@@ -432,6 +433,65 @@ describe('executeDashboardOperations', () => {
       collapsed: false,
       grid: { y: 12 },
       panels: [],
+    });
+  });
+
+  describe('validateDashboard', () => {
+    const validateDashboard: ValidateDashboard = ({ panels }) =>
+      panels.flatMap((widget, widgetIndex) =>
+        !isSection(widget) && widget.config.invalid
+          ? [{ path: ['panels', widgetIndex, 'config', 'invalid'], message: 'Unrecognized key' }]
+          : []
+      );
+
+    it('discards invalid panels after all operations and drops their authoring notes', async () => {
+      const result = await executeDashboardOperations({
+        dashboardData: { title: 'Dashboard', panels: [] },
+        operations: [
+          {
+            operation: 'add_panels',
+            panels: [
+              {
+                source: 'request',
+                chartType: SupportedChartType.Metric,
+                query: 'show total requests',
+                grid: { x: 0, y: 0, w: 24, h: 9 },
+              },
+              {
+                source: 'request',
+                chartType: SupportedChartType.Metric,
+                query: 'show p95 latency',
+                grid: { x: 24, y: 0, w: 24, h: 9 },
+              },
+            ],
+          },
+        ],
+        logger,
+        resolvePanelContent: createResolvePanelContent({
+          'show total requests': createResolvedPanelContent(
+            { type: LENS_EMBEDDABLE_TYPE, config: { type: 'metric' } },
+            'Created a metric showing total requests.'
+          ),
+          'show p95 latency': createResolvedPanelContent(
+            { type: LENS_EMBEDDABLE_TYPE, config: { type: 'metric', invalid: true } },
+            'Created a metric showing p95 latency.'
+          ),
+        }),
+        validateDashboard,
+      });
+
+      const [validPanel, ...otherPanels] = getPanelsOnly(result.dashboardData.panels);
+      expect(validPanel.config).toEqual({ type: 'metric' });
+      expect(otherPanels).toEqual([]);
+      expect(result.failures).toEqual([
+        expect.objectContaining({
+          type: DASHBOARD_OPERATION_FAILURE_TYPES.validateDashboard,
+          error: expect.stringContaining('Panel was not added'),
+        }),
+      ]);
+      expect(result.panelAuthoringNotes).toEqual([
+        { panelId: validPanel.id, authoringNote: 'Created a metric showing total requests.' },
+      ]);
     });
   });
 

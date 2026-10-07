@@ -10,6 +10,10 @@
 import type { SavedObjectsClientContract } from '@kbn/core/server';
 import type { ScanDashboardsResult } from './scan_dashboards';
 import type { DashboardReadResponseBody } from './api';
+import type { getDashboardStateSchema } from './api/dashboard_state_schemas';
+
+/** The strict as-code dashboard state schema used by the dashboard API. */
+export type DashboardStateSchema = ReturnType<typeof getDashboardStateSchema>;
 
 /**
  * Client interface for dashboard CRUD operations
@@ -32,6 +36,11 @@ export interface DashboardPluginSetup {}
 export interface DashboardPluginStart {
   /** Client for dashboard CRUD operations. */
   client: DashboardServerClient;
+  /**
+   * Returns the strict as-code dashboard state schema used by the dashboard API, built once from
+   * every registered embeddable schema.
+   */
+  getDashboardStateSchema: () => DashboardStateSchema;
   /**
    * Scans dashboards with pagination.
    *
