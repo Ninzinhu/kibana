@@ -46,7 +46,7 @@ export const markdownPanelConfigSchema = z.object({
  * The markdown variant of a `config`-source panel input, discriminated by
  * `type: 'markdown'`.
  */
-export const markdownPanelConfigInputSchema = z.object({
+const markdownPanelConfigInputSchema = z.object({
   source: z.literal('config'),
   type: z.literal('markdown'),
   grid: panelGridSchema,
@@ -58,7 +58,7 @@ export const markdownPanelConfigInputSchema = z.object({
  * panel by id and replaces its config. Derived from the add schema so the
  * `source`/`type`/`config` shape stays in sync.
  */
-export const editMarkdownPanelConfigInputSchema = markdownPanelConfigInputSchema
+const editMarkdownPanelConfigInputSchema = markdownPanelConfigInputSchema
   .omit({ grid: true })
   .extend({
     panelId: z.string().max(256).describe('Existing markdown panel id to update.'),
