@@ -1,5 +1,5 @@
 {
-  "sha1": "320fc9571cb547bd9bd4ed49a7e74c874fb6c208",
+  "sha1": "3455674d4e6be3532cd46d15b3230a485f67a235",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -26,7 +26,7 @@
       ],
       "location": {
         "file": "x-pack/solutions/security/plugins/security_solution/test/scout/edr_response_actions/ui/parallel_tests/alert_flyout_results.spec.ts",
-        "line": 53,
+        "line": 55,
         "column": 35
       }
     },
@@ -86,8 +86,8 @@
       ],
       "location": {
         "file": "x-pack/solutions/security/plugins/security_solution/test/scout/edr_response_actions/ui/parallel_tests/isolate_from_alert.spec.ts",
-        "line": 37,
-        "column": 7
+        "line": 59,
+        "column": 31
       }
     },
     {
@@ -100,8 +100,23 @@
       ],
       "location": {
         "file": "x-pack/solutions/security/plugins/security_solution/test/scout/edr_response_actions/ui/parallel_tests/isolate_from_case.spec.ts",
-        "line": 64,
-        "column": 31
+        "line": 72,
+        "column": 9
+      }
+    },
+    {
+      "id": "0777301b4e4271c-c239d1acb0f5178",
+      "title": "Response console from a case opens the console from the case alert and keeps the history date picker usable",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic",
+        "@local-serverless-security_complete"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/edr_response_actions/ui/parallel_tests/response_console_from_case.spec.ts",
+        "line": 48,
+        "column": 7
       }
     }
   ]

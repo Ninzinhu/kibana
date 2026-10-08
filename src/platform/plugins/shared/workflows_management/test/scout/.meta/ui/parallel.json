@@ -1,5 +1,5 @@
 {
-  "sha1": "5eab15e7429f91a664fed98ac4b98a82b1532380",
+  "sha1": "d7d50cde62b413dfc44f86af196b31fad89e7838",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -408,8 +408,8 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor/service_accounts_disabled.spec.ts",
-        "line": 90,
-        "column": 9
+        "line": 82,
+        "column": 20
       }
     },
     {
@@ -422,8 +422,8 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor/service_accounts_disabled.spec.ts",
-        "line": 118,
-        "column": 21
+        "line": 109,
+        "column": 20
       }
     },
     {
@@ -450,8 +450,8 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor_event_autocomplete.spec.ts",
-        "line": 46,
-        "column": 7
+        "line": 40,
+        "column": 29
       }
     },
     {
@@ -564,7 +564,7 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 96,
+        "line": 99,
         "column": 5
       }
     },
@@ -582,7 +582,7 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 96,
+        "line": 99,
         "column": 5
       }
     },
@@ -600,7 +600,7 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 96,
+        "line": 99,
         "column": 5
       }
     },
@@ -618,7 +618,7 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 96,
+        "line": 99,
         "column": 5
       }
     },
@@ -636,7 +636,7 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 96,
+        "line": 99,
         "column": 5
       }
     },
@@ -654,7 +654,7 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 96,
+        "line": 99,
         "column": 5
       }
     },
@@ -672,8 +672,8 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 105,
-        "column": 11
+        "line": 108,
+        "column": 9
       }
     },
     {
@@ -690,8 +690,8 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 141,
-        "column": 51
+        "line": 134,
+        "column": 20
       }
     },
     {
@@ -708,8 +708,8 @@
       ],
       "location": {
         "file": "src/platform/plugins/shared/workflows_management/test/scout/ui/parallel_tests/workflow_editor.spec.ts",
-        "line": 154,
-        "column": 87
+        "line": 152,
+        "column": 27
       }
     },
     {

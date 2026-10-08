@@ -1,5 +1,5 @@
 {
-  "sha1": "7e2f03be824ce018ad0dbbb560ee18b1ea839d45",
+  "sha1": "24ea16a68e9ed5e3df81509a1466ed5d4d15b826",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -923,8 +923,8 @@
       }
     },
     {
-      "id": "33b867a7e4eb3bf-ff1ea68fdcf4fdd",
-      "title": "Observability Alerts nav — alerting v2 clicking Alerts loads Alert episodes when alerting v2 is enabled",
+      "id": "33b867a7e4eb3bf-774772c580c93ed",
+      "title": "Observability Alerts nav — alerting v2 clicking Alerts loads alerts when alerting v2 is enabled",
       "expectedStatus": "passed",
       "tags": [
         "@local-stateful-classic",

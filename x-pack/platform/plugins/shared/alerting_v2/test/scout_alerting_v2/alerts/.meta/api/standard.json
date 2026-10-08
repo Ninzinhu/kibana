@@ -1,5 +1,5 @@
 {
-  "sha1": "3b03d7749db7bfa5863dfeaa6490b665051744c9",
+  "sha1": "9d2ad08e5989f9a2fe2e94b9286ab172d9582688",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -378,7 +378,7 @@
       "location": {
         "file": "x-pack/platform/plugins/shared/alerting_v2/test/scout_alerting_v2/alerts/api/tests/bulk_series_actions.spec.ts",
         "line": 95,
-        "column": 25
+        "column": 23
       }
     },
     {

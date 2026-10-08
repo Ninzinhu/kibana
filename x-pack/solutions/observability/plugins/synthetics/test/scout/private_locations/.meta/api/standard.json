@@ -1,5 +1,5 @@
 {
-  "sha1": "70d5025706efc19266891b0fc219c0bc7547b910",
+  "sha1": "47930416247a1b7bffff17f173fe6d94da79da0d",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -841,6 +841,32 @@
         "file": "x-pack/solutions/observability/plugins/synthetics/test/scout/private_locations/api/tests/scalable_private_location_monitor_crud.spec.ts",
         "line": 54,
         "column": 25
+      }
+    },
+    {
+      "id": "90667665ddacd0b-cd6af572a976a8b",
+      "title": "ScalablePrivateLocationMaintenanceWindowSync redeploys an updated maintenance window and bumps the agent policy",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/observability/plugins/synthetics/test/scout/private_locations/api/tests/scalable_private_location_mw_sync.spec.ts",
+        "line": 147,
+        "column": 42
+      }
+    },
+    {
+      "id": "90667665ddacd0b-abfaa12cb438db7",
+      "title": "ScalablePrivateLocationMaintenanceWindowSync removes a deleted maintenance window from the package policy and the monitor",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/observability/plugins/synthetics/test/scout/private_locations/api/tests/scalable_private_location_mw_sync.spec.ts",
+        "line": 181,
+        "column": 19
       }
     },
     {

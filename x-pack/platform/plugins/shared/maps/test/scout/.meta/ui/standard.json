@@ -1,5 +1,5 @@
 {
-  "sha1": "d4feb469813e9344b267e75ea2df4bc9704b24e8",
+  "sha1": "f855e5c43aac572165622709ff91f4a8a1245197",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -96,6 +96,19 @@
       }
     },
     {
+      "id": "2b58c2f7a4aa23d-ed5412ca0db7724",
+      "title": "Maps - ES|QL source should display ES|QL statement results on map",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/platform/plugins/shared/maps/test/scout/ui/tests/esql_source.spec.ts",
+        "line": 26,
+        "column": 10
+      }
+    },
+    {
       "id": "43bc63ddaba86b0-d8548e6b6a91a8d",
       "title": "Maps - filter by map extent filter by map extent lifecycle",
       "expectedStatus": "passed",
@@ -165,6 +178,32 @@
         "file": "x-pack/platform/plugins/shared/maps/test/scout/ui/tests/tooltip_filter_actions.spec.ts",
         "line": 67,
         "column": 7
+      }
+    },
+    {
+      "id": "ee0564455f63b64-fb77bff710d188a",
+      "title": "Maps - geo top hits split on string field - should display top hits per entity",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/platform/plugins/shared/maps/test/scout/ui/tests/top_hits.spec.ts",
+        "line": 40,
+        "column": 10
+      }
+    },
+    {
+      "id": "ee0564455f63b64-9f194f7e74d3a46",
+      "title": "Maps - geo top hits split on scripted field - should display top hits per entity",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/platform/plugins/shared/maps/test/scout/ui/tests/top_hits.spec.ts",
+        "line": 45,
+        "column": 15
       }
     }
   ]

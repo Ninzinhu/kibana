@@ -1,5 +1,5 @@
 {
-  "sha1": "82031c3bbc92b821cd25f2d48529faead6096ae1",
+  "sha1": "da6953e822854279943c449b4fd103c4e63fa14f",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -422,6 +422,111 @@
         "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/exclude_data_view.spec.ts",
         "line": 39,
         "column": 60
+      }
+    },
+    {
+      "id": "7edef7d72fc00c1-b17d27399c45991",
+      "title": "Data view field formatters applies text, link and color formats from the field flyout",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/field_formatter.spec.ts",
+        "line": 52,
+        "column": 39
+      }
+    },
+    {
+      "id": "7edef7d72fc00c1-f624b3ea51a27c8",
+      "title": "Data view field formatters applies the default formatter from a field meta unit",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/field_formatter.spec.ts",
+        "line": 101,
+        "column": 13
+      }
+    },
+    {
+      "id": "067a6c5515fae5e-bbbfefa7c304dc5",
+      "title": "Data view runtime fields creates, modifies and deletes a runtime field",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic",
+        "@local-serverless-search",
+        "@cloud-serverless-search",
+        "@local-serverless-observability_complete",
+        "@cloud-serverless-observability_complete",
+        "@local-serverless-security_complete",
+        "@cloud-serverless-security_complete"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/runtime_fields.spec.ts",
+        "line": 24,
+        "column": 5
+      }
+    },
+    {
+      "id": "067a6c5515fae5e-bdbd60aec2a817c",
+      "title": "Data view runtime fields creates, modifies and deletes a composite runtime field",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic",
+        "@local-serverless-search",
+        "@cloud-serverless-search",
+        "@local-serverless-observability_complete",
+        "@cloud-serverless-observability_complete",
+        "@local-serverless-security_complete",
+        "@cloud-serverless-security_complete"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/runtime_fields.spec.ts",
+        "line": 55,
+        "column": 28
+      }
+    },
+    {
+      "id": "ff6a7a65c384d6d-df65a126bce8e3a",
+      "title": "Data view scripted fields does not allow saving of invalid scripts",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/scripted_fields.spec.ts",
+        "line": 25,
+        "column": 13
+      }
+    },
+    {
+      "id": "ff6a7a65c384d6d-95f2d5843ac0a0d",
+      "title": "Data view scripted fields creates a scripted field and re-saves it repeatedly",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/scripted_fields.spec.ts",
+        "line": 35,
+        "column": 84
+      }
+    },
+    {
+      "id": "a72c16b37cef00a-3aca376e38444dc",
+      "title": "Data Views: Try ES|QL navigates to Discover and presents an ES|QL query",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic"
+      ],
+      "location": {
+        "file": "src/platform/plugins/shared/data_view_management/test/scout/ui/parallel_tests/try_esql.spec.ts",
+        "line": 16,
+        "column": 5
       }
     }
   ]

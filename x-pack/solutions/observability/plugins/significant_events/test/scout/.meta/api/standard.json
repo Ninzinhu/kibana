@@ -1,5 +1,5 @@
 {
-  "sha1": "74e56919159b841fa71abf40a81adaa64852352d",
+  "sha1": "6b65e34d7385ba1e7c0ca433e95853a57487df55",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -32,8 +32,8 @@
       ],
       "location": {
         "file": "x-pack/solutions/observability/plugins/significant_events/test/scout/api/tests/authorization/rule_events_read.spec.ts",
-        "line": 77,
-        "column": 25
+        "line": 67,
+        "column": 42
       }
     },
     {

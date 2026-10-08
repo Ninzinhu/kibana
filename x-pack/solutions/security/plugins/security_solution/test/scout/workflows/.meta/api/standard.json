@@ -1,5 +1,5 @@
 {
-  "sha1": "ace4503f78b1c287dd57b749d5fb94259aa961f9",
+  "sha1": "152ad71249cb4598bb400154e81761c13e3313ea",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -116,6 +116,286 @@
         "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_trigger_registration.spec.ts",
         "line": 44,
         "column": 25
+      }
+    },
+    {
+      "id": "6a8358ded703340-14944f8fc8801fb",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.alertAssigneesChanged event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-909102a00060fab",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.alertStatusChanged event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-4fb191daf243250",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.alertTagsChanged event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-d851bd7ab91637f",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.attackAssigneesChanged event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-31984a2b5f66801",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.attackStatusChanged event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-06f9d766da3a895",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.attackTagsChanged event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-3f83b7d7f8edf15",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.noteCreated event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-5938b7e8e5dbb8c",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security.noteUpdated event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 112,
+        "column": 16
+      }
+    },
+    {
+      "id": "6a8358ded703340-9a2b960f039700f",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation reports unknown security trigger event fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 124,
+        "column": 32
+      }
+    },
+    {
+      "id": "6a8358ded703340-73c9d5f7e9c2cae",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation resolves security step output fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 126,
+        "column": 92
+      }
+    },
+    {
+      "id": "6a8358ded703340-0dac304c3189a93",
+      "title": "Security Solution - Workflow schemas introspection - YAML validation workflow YAML validation reports unknown security step output fields",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 138,
+        "column": 74
+      }
+    },
+    {
+      "id": "6a8358ded703340-ac6074074f67295",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.alertAssigneesChanged event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-960282656beb71d",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.alertStatusChanged event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-3899ba45e507643",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.alertTagsChanged event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-96d7d794fa0289a",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.attackAssigneesChanged event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-871f53e970f42d1",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.attackStatusChanged event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-ad5789000d39d99",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.attackTagsChanged event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-e8752bf1a90263d",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.noteCreated event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-691575065868c0c",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs trigger definitions agent tool exposes security.noteUpdated event context schema",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 172,
+        "column": 10
+      }
+    },
+    {
+      "id": "6a8358ded703340-4799d58b49d910b",
+      "title": "Security Solution - Workflow schemas introspection - agent catalogs step definitions agent tool exposes security step input params and output summary",
+      "expectedStatus": "passed",
+      "tags": [
+        "@local-stateful-classic",
+        "@cloud-stateful-classic"
+      ],
+      "location": {
+        "file": "x-pack/solutions/security/plugins/security_solution/test/scout/workflows/api/tests/security_workflow_schemas_introspection.spec.ts",
+        "line": 190,
+        "column": 10
       }
     }
   ]

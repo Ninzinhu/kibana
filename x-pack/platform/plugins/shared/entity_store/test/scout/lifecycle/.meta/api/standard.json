@@ -1,5 +1,5 @@
 {
-  "sha1": "d8c8309d31bfba74e0c9df8c12a88ac59ad78c51",
+  "sha1": "7b97fd8f8f2329a2e3786cc38733a2ae360144fc",
   "testChannels": [
     "ci-on-commit"
   ],
@@ -597,8 +597,8 @@
       }
     },
     {
-      "id": "46bb8a3a58b1410-b5ad2fd90b66e1d",
-      "title": "Entity Store per entity-type log extraction config reports identical config for every engine when nothing is overridden",
+      "id": "46bb8a3a58b1410-f5452522a797eca",
+      "title": "Entity Store per entity-type log extraction config reports identical non-cadence config for every engine, and the built-in cadence per type, when nothing is overridden",
       "expectedStatus": "passed",
       "tags": [
         "@local-stateful-classic",
@@ -624,8 +624,8 @@
       ],
       "location": {
         "file": "x-pack/platform/plugins/shared/entity_store/test/scout/lifecycle/api/tests/log_extraction_by_type.spec.ts",
-        "line": 110,
-        "column": 70
+        "line": 121,
+        "column": 16
       }
     },
     {
@@ -640,8 +640,8 @@
       ],
       "location": {
         "file": "x-pack/platform/plugins/shared/entity_store/test/scout/lifecycle/api/tests/log_extraction_by_type.spec.ts",
-        "line": 131,
-        "column": 18
+        "line": 135,
+        "column": 67
       }
     },
     {
@@ -656,8 +656,8 @@
       ],
       "location": {
         "file": "x-pack/platform/plugins/shared/entity_store/test/scout/lifecycle/api/tests/log_extraction_by_type.spec.ts",
-        "line": 148,
-        "column": 63
+        "line": 151,
+        "column": 68
       }
     },
     {
@@ -672,8 +672,8 @@
       ],
       "location": {
         "file": "x-pack/platform/plugins/shared/entity_store/test/scout/lifecycle/api/tests/log_extraction_by_type.spec.ts",
-        "line": 160,
-        "column": 80
+        "line": 163,
+        "column": 96
       }
     },
     {
@@ -688,8 +688,8 @@
       ],
       "location": {
         "file": "x-pack/platform/plugins/shared/entity_store/test/scout/lifecycle/api/tests/log_extraction_by_type.spec.ts",
-        "line": 206,
-        "column": 16
+        "line": 213,
+        "column": 23
       }
     },
     {
